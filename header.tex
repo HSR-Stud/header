@@ -1,4 +1,4 @@
-% Genereller Header
+dkoep% Genereller Header
 \documentclass[10pt,twoside,a4paper,fleqn]{article}
 % Dateiencoding
 \usepackage[utf8]{inputenc}
@@ -8,13 +8,14 @@
 \usepackage[ngerman]{babel,varioref}
 
 % Pakete
-\usepackage{amssymb,amsmath,fancybox,graphicx,color,lastpage,wrapfig,fancyhdr,hyperref,verbatim,floatflt,multicol,multirow,rotating}
+\usepackage{amssymb,amsmath,fancybox,graphicx,color,lastpage,wrapfig,fancyhdr,hyperref,verbatim,floatflt,multicol,multirow,rotating,pdflscape,slashbox,array}
 
 %%%%%%%%%%%%%%%%%%%%
 % Generelle Makros %
 %%%%%%%%%%%%%%%%%%%%
 \newcommand{\skript}[1]{$_{\textcolor{red}{\mbox{\small{Skript S.#1}}}}$}
 \newcommand{\verweis}[2]{\small{(siehe auch \ref{#1}, #2 (S. \pageref{#1}))}}
+\newcommand{\verweiskurz}[1]{(\small{siehe \ref{#1}\normalsize)}}
 \newcommand{\subsubadd}[1]{\textcolor{black}{\mbox{#1}}}
 \newcommand{\formelbuch}[1]{$_{\textcolor{red}{\mbox{\small{S#1}}}}$}
 
@@ -45,6 +46,9 @@
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\Real}{Re}
 \DeclareMathOperator{\Imag}{Im}
+\DeclareMathOperator{\e}{e}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\PolyGrad}{PolyGrad}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
