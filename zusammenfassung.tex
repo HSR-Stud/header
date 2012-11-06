@@ -5,6 +5,19 @@
 % Seitenränder für Formelsammlungen
 \usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm,includeheadfoot]{geometry}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Layout der Kopf und Fusszeile %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\deftripstyle{zusammenfassung}[0pt][0.5pt]
+	{\Title}	% Kopfzeile innen
+	{\headmark}	% Kopfzeile mitte
+	{\pagemark}	% Kopfzeile aussen
+	{\Author}	% Fusszeile innen
+	{\includegraphics[width=1.6cm]{./header/lizenzen/cc-by-nc-sa/small.png}}			% Fusszeile mitte
+	{\Date}	% Fusszeile aussen
+\pagestyle{zusammenfassung}
+
+
 
 % Makros für Verweise auf ein Buch oder Skript
 \newcommand{\buch}[1]{$_{\textcolor{HSRLakeGreen}{\mbox{\small{#1}}}}$}
