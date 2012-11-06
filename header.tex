@@ -1,0 +1,60 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Makros & anderer Low-Level bastel %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+%% Makros für Titel, Autor und Datum 
+%% Dank diesem Makro stehen Titel, Autor und Datum überall im Dokument zur verfügung
+%% Date hat zudem den Default-Wert \today
+\def\@Title{}
+\def\@Author{}
+\def\@Date{\today}
+\newcommand{\Title}{\@Title}
+\newcommand{\Author}{\@Author}
+\newcommand{\Date}{\@Date}
+\AtBeginDocument{%
+  \let\@Title\@title
+  \let\@Author\@author
+  \let\@Date\@date
+}
+
+%% Makros für den Arraystretch (bei uns meist in Tabellen genutzt, welche Formeln enthalten)
+% Default Value
+\def\@ArrayStretchDefault{1} % Entspricht der Voreinstellung von Latex
+
+% Setzt einen neuen Wert für den arraystretch
+\newcommand{\setArrayStretch}[1]{\renewcommand{\arraystretch}{#1}}
+
+% Setzt den arraystretch zurück auf den default wert
+\newcommand{\resetArrayStretch}{\renewcommand{\arraystretch}{\@ArrayStretchDefault}}
+
+% Makro zum setzten des Default arraystretch. Kann nur in der Präambel verwendet werden.
+\newcommand{\setDefaultArrayStretch}[1]{%
+	\AtBeginDocument{%
+		\def\@ArrayStretchDefault{#1}
+		\renewcommand{\arraystretch}{#1}
+	}
+}
+\makeatother
+
+
+%%%%%%%%%%%%%%
+%% Packages %%
+%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc} % UTF-8 unterstützung
+\usepackage[ngerman]{babel} % Silbentrennung
+\usepackage[automark]{scrpage2} % Header und Footer
+\usepackage{listings}
+\usepackage{tabularx}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Layout der Kopf und Fusszeile %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\deftripstyle{bericht}[0pt][0.5pt]
+	{\Title}	% Kopfzeile innen
+	{\headmark}	% Kopfzeile mitte
+	{\pagemark}	% Kopfzeile aussen
+	{\Author}	% Fusszeile innen
+	{}			% Fusszeile mitte
+	{\Date}	% Fusszeile aussen
+\pagestyle{bericht}
