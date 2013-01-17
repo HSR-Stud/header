@@ -8,7 +8,7 @@
 \usepackage[ngerman]{babel,varioref}
 
 % Pakete
-\usepackage{amssymb,amsmath,fancybox,graphicx,color,lastpage,wrapfig,fancyhdr,hyperref,verbatim,floatflt,multicol,multirow,rotating,pdflscape,array,longtable,listings,trfsigns, trsym}
+\usepackage{amssymb,amsmath,fancybox,graphicx,lastpage,wrapfig,fancyhdr,hyperref,verbatim,floatflt,multicol,multirow,rotating,pdflscape,array,longtable,listings}
 
 % Zum Bilder einfach in Tabellen einfügen (valign=t)
 \usepackage[export]{adjustbox}
@@ -38,13 +38,7 @@
 %%%%%%%%%%
 % Farben %
 %%%%%%%%%%
-\definecolor{black}{rgb}{0,0,0}
-\definecolor{red}{rgb}{1,0,0}
-\definecolor{white}{rgb}{1,1,1}
-\definecolor{grey}{rgb}{0.8,0.8,0.8}
-\definecolor{green}{rgb}{0,.8,0.05}
-\definecolor{brown}{RGB}{197,126,52}
-\definecolor{orange}{RGB}{255,119,0}
+\usepackage{xcolor}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Mathematische Operatoren %
@@ -64,6 +58,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Fouriertransformationen %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{trfsigns, trsym}
 %\unitlength1cm
 % Zeitbereich -- Frequenzbereich
 %\newcommand{\laplace}
