@@ -24,7 +24,18 @@
 	{\Date}	% Fusszeile aussen
 \pagestyle{zusammenfassung}
 
+% Nummerierte und unnummerierte paragraph headings
+\setcounter{secnumdepth}{5}
 
+\RedeclareSectionCommands[
+  afterskip=1sp
+]{paragraph,subparagraph}
+
+\renewcommand*{\paragraphformat}{\theparagraph\autodot\enskip}
+\renewcommand*{\subparagraphformat}{\thesubparagraph\autodot\enskip}
+
+
+  
 
 % Makros für Verweise auf ein Buch oder Skript
 \newcommand{\buch}[1]{\texorpdfstring{$_{\textcolor{HSRLakeGreen}{\mbox{\small{#1}}}}$}{}}
