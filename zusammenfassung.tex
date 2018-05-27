@@ -7,11 +7,19 @@
 % Seitenränder für Formelsammlungen
 \usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm,includeheadfoot]{geometry}
 
+\usepackage{hyperref}
+\usepackage{longtable}
 \usepackage{circuitikz}
 \usepackage{multirow} % Create tabular cells spanning multiple rows
 \usepackage{multicol} % In­ter­mix sin­gle and mul­ti­ple columns
 \usepackage{rotating} % Rotation tools, including rotated fullpage floats
 
+% Command for images in table
+\newcommand\tabImg[2][]{%
+	\raisebox{0pt}[\dimexpr\totalheight+\dp\strutbox\relax][\dp\strutbox]{%
+		\includegraphics[#1]{#2}%
+	}%
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Layout der Kopf und Fusszeile %%
