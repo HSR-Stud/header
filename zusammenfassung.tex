@@ -13,6 +13,7 @@
 \usepackage{multirow} % Create tabular cells spanning multiple rows
 \usepackage{multicol} % In­ter­mix sin­gle and mul­ti­ple columns
 \usepackage{rotating} % Rotation tools, including rotated fullpage floats
+\usepackage{lastpage}
 
 % Command for images in table
 \newcommand\tabImg[2][]{%
@@ -27,7 +28,7 @@
 \deftripstyle{zusammenfassung}[0pt][0.5pt]
 	{\Title}	% Kopfzeile innen
 	{\headmark}	% Kopfzeile mitte
-	{\pagemark}	% Kopfzeile aussen
+	{\pagemark/\pageref{LastPage}}	% Kopfzeile aussen
 	{\Author}	% Fusszeile innen
 	{\includegraphics[width=1.6cm]{./header/lizenzen/cc-by-nc-sa/small.png}}			% Fusszeile mitte
 	{\Date}	% Fusszeile aussen
