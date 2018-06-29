@@ -4,23 +4,16 @@
 \input{header/enumitem}
 \input{header/listings}
 
-% Seitenränder für Formelsammlungen
-\usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm,includeheadfoot]{geometry}
+% Seitenränder für Formelsammlungen 
+\usepackage[left=1cm,right=1cm,top=0.5cm,bottom=0.5cm,includeheadfoot]{geometry}
 
 \usepackage{hyperref}
 \usepackage{longtable}
-\usepackage{circuitikz}
+\usepackage[europeanresistors,americaninductors]{circuitikz}
 \usepackage{multirow} % Create tabular cells spanning multiple rows
 \usepackage{multicol} % In­ter­mix sin­gle and mul­ti­ple columns
 \usepackage{rotating} % Rotation tools, including rotated fullpage floats
-\usepackage{lastpage}
 
-% Command for images in table
-\newcommand\tabImg[2][]{%
-	\raisebox{0pt}[\dimexpr\totalheight+\dp\strutbox\relax][\dp\strutbox]{%
-		\includegraphics[#1]{#2}%
-	}%
-}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Layout der Kopf und Fusszeile %%
@@ -28,7 +21,7 @@
 \deftripstyle{zusammenfassung}[0pt][0.5pt]
 	{\Title}	% Kopfzeile innen
 	{\headmark}	% Kopfzeile mitte
-	{\pagemark/\pageref{LastPage}}	% Kopfzeile aussen
+	{\pagemark}	% Kopfzeile aussen
 	{\Author}	% Fusszeile innen
 	{\includegraphics[width=1.6cm]{./header/lizenzen/cc-by-nc-sa/small.png}}			% Fusszeile mitte
 	{\Date}	% Fusszeile aussen
@@ -45,7 +38,13 @@
 \renewcommand*{\subparagraphformat}{\thesubparagraph\autodot\enskip}
 
 
-  
+%%Makros%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+% Command for images in table
+\newcommand\tabImg[2][]{%
+    \raisebox{0pt}[\dimexpr\totalheight+\dp\strutbox\relax][\dp\strutbox]{%
+        \includegraphics[#1]{#2}%
+    }%
+}
 
 % Makros für Verweise auf ein Buch oder Skript
 \newcommand{\buch}[1]{\texorpdfstring{$_{\textcolor{HSRLakeGreen}{\mbox{\small{#1}}}}$}{}}
@@ -61,6 +60,3 @@
 
 % Todo command
 \newcommand{\todo}[1]{\textbf{\color{red}{TO DO: #1}}}
-
-% Note command
-\newcommand{\note}[1]{\textbf{\color{red}{Note: #1}}}
