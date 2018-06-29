@@ -1,7 +1,41 @@
 \ifx\GUARDlistings\undefined
 \def\GUARDlistings{}
 
+%TODO Auf HSR-Farben ändern 
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
 \usepackage{listings}
+\lstset{ %
+    firstnumber=1,
+    backgroundcolor=\color{white},   % choose the background color; you must add        \usepackage{color} or \usepackage{xcolor}
+    basicstyle=\footnotesize\ttfamily, % the size of the fonts that are used for the code
+    breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+    breaklines=true,                 % sets automatic line breaking
+    captionpos=b,                    % sets the caption-position to bottom
+    commentstyle=\color{mygreen},    % comment style
+    deletekeywords={...},            % if you want to delete keywords from the given language
+    otherkeywords={...},             % if you want to add more keywords to the set
+    escapeinside={\%*}{*\%},          % if you want to add LaTeX within your code
+    extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+    frame=single,	                 % adds a frame around the code
+    keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+    keywordstyle=\color{blue},       % keyword style
+    language=C++,                    % the language of the code   
+    numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+    numbersep=5pt,                   % how far the line-numbers are from the code
+    numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+    rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+    showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+    showstringspaces=false,          % underline spaces within strings only
+    showtabs=false,                  % show tabs within strings adding particular underscores
+    stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+    stringstyle=\color{mymauve},     % string literal style
+    tabsize=2,	                     % sets default tabsize to 2 spaces
+    %title=\lstname                   % show the filename of files included with         \lstinputlisting; also try caption instead of title
+}
+
 \lstdefinestyle{Java}{ numbers=left,
   belowcaptionskip=1\baselineskip,
   breaklines=true,
@@ -67,6 +101,90 @@
   tabsize=2
 }
 
+\lstdefinestyle{Cppunit}{
+    belowcaptionskip=1\baselineskip,
+    %frame=L,
+    xleftmargin=\parindent,
+    language=C++,
+    keywordstyle=\bfseries\color{blue},
+    keywordstyle=[2]\bf\color{black}, %not sure why \bf works, but it does
+    commentstyle=\itshape\color{mygreen},
+    identifierstyle=\color{black},
+    stringstyle=\color{gray},
+    keywords=[2]{  %Cpp Unit Keywords
+        CPPUNIT_ASSERT,
+        CPPUNIT_TEST,
+        CPPUNIT_TEST_EXCEPTION,
+        CPPUNIT_TEST_END,
+        CPPUNIT_TEST_SUITE,
+        CPPUNIT_TEST_SUITE_REGISTRATION,
+        CPPUNIT_TEST_SUITE_END},
+}
+
+\lstdefinestyle{CppQT}{
+    belowcaptionskip=1\baselineskip,
+    %frame=L,
+    xleftmargin=\parindent,
+    language=C++,
+    keywordstyle=\bfseries\color{blue},
+    keywordstyle=[2]\bfseries\color{red},
+    commentstyle=\itshape\color{mygreen},
+    identifierstyle=\color{black},
+    stringstyle=\color{gray},
+    keywords=[2]{           % qt-Keywords
+        Qt,
+        SIGNAL,
+        SLOT,
+        QApplication,
+        QDialog,
+        QGridLayout,
+        QPushButton,
+        QLabel,
+        QVBoxLayout,
+        QHBoxLayout,
+        QWidget,
+        QGroupBox,
+        QFont,
+        QLineEdit,
+        QRadioButton,
+        QPen,
+        QRect,
+        QPaintEvent,
+        QBrush,
+        QPixmap,
+        QPainter,
+        QString,
+        QPoint,
+        update()},
+}
+
+\lstdefinestyle{Cdoxy}{
+    belowcaptionskip=1\baselineskip,
+    %frame=L,
+    xleftmargin=\parindent,
+    language=C++,  
+    keywordstyle=\bfseries\color{blue},
+    commentstyle=\itshape\color{mygreen},
+    identifierstyle=\color{black},
+    stringstyle=\color{gray},
+    otherkeywords={           % DoxygenKeywords
+        ...,
+        ....,
+        @mainpage,
+        @file,
+        @author,
+        @version,
+        @date,
+        @bug,
+        @brief,
+        @extended,
+        @param,
+        @return,
+        @warning,
+        @note,
+        @see},
+}
+
 \lstdefinestyle{Csharp}{
   numbers=left,
   belowcaptionskip=1\baselineskip,
@@ -93,12 +211,18 @@
   language=Matlab,
   showstringspaces=false,
   basicstyle=\footnotesize\ttfamily,
-  keywordstyle=\bfseries\color{green!40!black},
-  commentstyle=\itshape\color{purple!40!black},
-  identifierstyle=\color{blue},
+  keywordstyle=\bfseries\color{blue},
+  commentstyle=\itshape\color{mygreen},
+  identifierstyle=\color{black},
   stringstyle=\color{orange},
   numberstyle=\ttfamily\tiny,
-  tabsize=2
+  tabsize=2,
+  otherkeywords={
+      solve,
+      int,
+      double,
+      syms,
+      interp1}
 }
 
 \lstdefinestyle{VHDL}{
