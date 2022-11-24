@@ -1,5 +1,7 @@
 # Header
 
+**DEPRECATED: This has been replaced by the [HSRStud package and document classes](https://github.com/HSR-Stud/HSRStud-Package)! Do not use this repository for new zusammenfassugen**
+
 Dieses Header-Modul wird in allen HSR Zusammenfassungen eingebunden. Es werden die wichtigsten Packages eingebunden, 
 das Layout festgelegt und einige Makros definiert.
 
